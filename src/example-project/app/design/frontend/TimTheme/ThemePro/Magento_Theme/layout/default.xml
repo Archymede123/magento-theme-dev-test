@@ -31,7 +31,8 @@
 
         <referenceBlock name="report.bugs" remove="true"/>
         <move element="copyright" destination="before.body.end"/>
-        <move element="catalog.topnav" destination="header-wrapper" />
+        <move element="catalog.topnav" destination="header-wrapper" after="logo" />
+        <move element="minicart" destination="header.panel" />
 
     </body>
 </page>

@@ -1,3 +1,9 @@
+.header.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .page-header .panel{
 
   &.wrapper {
@@ -19,14 +25,20 @@
 
 .navigation {
   background: none;
-  top: -10px;
-  left: 4%;
+  width: auto;
+  flex: 1 0 auto;
+
+  ul {
+   display: flex;
+  }
+
 
   .level0 {
     margin: 0 !important;
     border: 1px solid black !important;
     border-right: none !important;
     width: 9%;
+    flex: 1 0 auto;
     text-align: center;
 
     &:last-child {
@@ -40,6 +52,7 @@
 
   .level1 {
     text-align: left;
+    border: none;
   }
 
   .ui-menu-item {
@@ -47,6 +60,59 @@
   }
 }
 
+.block-search {
+  width: 25px;
+  overflow: hidden;
+  position: unset;
+
+
+  .block-content {
+    opacity: 0;
+    transition: all .4s;
+  }
+
+  .search-icon__checkbox,
+  .search-icon__close {
+    display: none;
+  }
+
+
+
+  .search-icon__closed {
+   z-index: 401;
+  }
+
+  .search-icon__checkbox:checked {
+
+    &~ .search-icon__close  {
+      position: relative;
+      display: initial;
+      z-index: 400;
+      background-color: white;
+    }
+
+    &~ .search-icon__open {
+      display: none;
+    }
+
+    &~ .block-content {
+      animation: slide-in 0.5s forwards;
+      opacity: 1;
+      position: absolute;
+      left: 14%;
+      top: 39%;
+      width: 84%;
+
+      .input-text {
+        height: 50px;
+        }
+    }
+  }
+
+
+
+
+}
 
 
 
