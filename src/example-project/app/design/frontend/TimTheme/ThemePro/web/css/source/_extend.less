@@ -1,13 +1,39 @@
+a {
+  color: black;
+}
+
+.logo {
+  margin: 0;
+  position: absolute;
+  width: 15%;
+  height: 106px;
+  top: -28px;
+  left: 21px;
+  border: 1px solid #e8e8e8;
+  border-bottom: none;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .header.content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .page-header .panel{
 
   &.wrapper {
-    background-color: black;
+    background-color: white;
+    color: black;
+    border-bottom: none;
   }
 
   &.header {
@@ -15,8 +41,8 @@
   }
 }
 
-.page-header{
-  background-color: #eee;
+.page-header {
+  background-color: white;
 }
 
 .nav-sections-item-content{
@@ -27,26 +53,32 @@
   background: none;
   width: auto;
   flex: 1 0 auto;
+  margin-left: 16%;
+  color: black;
 
   ul {
    display: flex;
   }
 
+  .level-top {
+    margin: 10px;
+  }
+
 
   .level0 {
     margin: 0 !important;
-    border: 1px solid black !important;
+    border: 1px solid #e8e8e8 !important;
     border-right: none !important;
     width: 9%;
     flex: 1 0 auto;
     text-align: center;
 
     &:last-child {
-      border-right: 1px solid black !important;
+      border-right: 1px solid #e8e8e8 !important;
     }
 
     &> .level-top {
-      color: white;
+      color: black;
     }
   }
 
@@ -60,15 +92,24 @@
   }
 }
 
+
 .block-search {
   width: 25px;
   overflow: hidden;
   position: unset;
 
+  .action.search::before {
+    display: none;
+  }
+
 
   .block-content {
-    opacity: 0;
-    transition: all .4s;
+    visibility: hidden;
+    position: absolute;
+    left: 95%;
+    top: 39%;
+    width: 3%;
+
   }
 
   .search-icon__checkbox,
@@ -76,7 +117,12 @@
     display: none;
   }
 
-
+  .search-icon__open {
+    position: absolute;
+    top: 44px;
+    left: 96%;
+    z-index: 500;
+  }
 
   .search-icon__closed {
    z-index: 401;
@@ -85,7 +131,9 @@
   .search-icon__checkbox:checked {
 
     &~ .search-icon__close  {
-      position: relative;
+      position: absolute;
+      top: 44px;
+      left: 96%;
       display: initial;
       z-index: 400;
       background-color: white;
@@ -96,12 +144,10 @@
     }
 
     &~ .block-content {
-      animation: slide-in 0.5s forwards;
-      opacity: 1;
-      position: absolute;
-      left: 14%;
-      top: 39%;
-      width: 84%;
+      visibility: visible;
+      transition: 1s;
+      left: 16.5%;
+      width: 82%;
 
       .input-text {
         height: 50px;
