@@ -4,40 +4,45 @@ a {
 
 .logo {
   margin: 0;
-  position: absolute;
-  width: 15%;
-  height: 106px;
-  top: -28px;
-  left: 21px;
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
   border: 1px solid #e8e8e8;
   border-bottom: none;
+  max-width: none;
+  height: 100%;
 
   img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 85%;
   }
 }
 
+.compare.wrapper {
+  display: none;
+}
+
 .header.content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 6vw 84% 6%;
+  grid-template-rows: 5vh 100px;
   align-items: center;
   padding: 0;
   border-bottom: none;
 }
 
-.page-header .panel{
+.page-header .panel.header {
+
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 2;
+  padding: 0px;
 
   &.wrapper {
     background-color: white;
     color: black;
     border-bottom: none;
-  }
-
-  &.header {
-    padding: 0px;
   }
 }
 
@@ -51,17 +56,19 @@ a {
 
 .navigation {
   background: none;
-  width: auto;
-  flex: 1 0 auto;
-  margin-left: 16%;
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
   color: black;
+  height: 100%;
 
   ul {
+   height: 100%;
    display: flex;
+   padding: 0;
   }
 
   .level-top {
-    margin: 10px;
+    margin: 0px;
   }
 
 
@@ -85,6 +92,11 @@ a {
 
     &> .level-top {
       color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
     }
 
     &:hover {
@@ -104,9 +116,11 @@ a {
 
 
 .block-search {
-  width: 25px;
   overflow: hidden;
-  position: unset;
+  position: initial;
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+
 
   .action.search::before {
     display: none;
@@ -116,8 +130,8 @@ a {
   .block-content {
     visibility: hidden;
     position: absolute;
-    left: 95%;
-    top: 0%;
+    left: 100%;
+    top: 30%;
     width: 3%;
 
   }
@@ -128,9 +142,6 @@ a {
   }
 
   .search-icon__open {
-    position: absolute;
-    top: 24px;
-    left: 96%;
     z-index: 500;
   }
 
@@ -141,10 +152,8 @@ a {
   .search-icon__checkbox:checked {
 
     &~ .search-icon__close  {
-      position: absolute;
-      top: 24px;
-      left: 96%;
       display: initial;
+      position: relative;
       z-index: 400;
       background-color: white;
     }
@@ -156,11 +165,11 @@ a {
     &~ .block-content {
       visibility: visible;
       transition: 1s;
-      left: 16.7%;
-      width: 82%;
+      left: 11.3%;
+      width: 88%;
 
       .input-text {
-        height: 69px;
+        height: 102px;
         }
     }
   }

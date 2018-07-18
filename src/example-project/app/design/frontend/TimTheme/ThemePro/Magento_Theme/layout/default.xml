@@ -36,5 +36,7 @@
         <move element="header.panel" destination="header-wrapper" after="catalog.topnav" />
 
 
+
+
     </body>
 </page>
