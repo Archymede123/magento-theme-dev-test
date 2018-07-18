@@ -33,6 +33,8 @@
         <move element="copyright" destination="before.body.end"/>
         <move element="catalog.topnav" destination="header-wrapper" after="logo" />
         <move element="minicart" destination="header.panel" />
+        <move element="header.panel" destination="header-wrapper" after="catalog.topnav" />
+
 
     </body>
 </page>
