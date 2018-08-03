@@ -6,6 +6,8 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    
     <body>
         <referenceContainer name="header.panel">
             <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
@@ -31,13 +33,15 @@
 
         <referenceBlock name="skip_to_content" remove="true"/>
         <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="navigation.sections" remove="true"/> 
         <move element="copyright" destination="before.body.end"/>
         <move element="catalog.topnav" destination="header-wrapper" after="logo" />
-        <move element="minicart" destination="header.panel" after="header-links" />
+        <move element="minicart" destination="header.panel" />
         <move element="header.panel" destination="header-wrapper" after="catalog.topnav" />
-        <move element="header" destination="header.panel" after="header-links" />
-        <move element="my-account-link" destination="header-links" />
-        <move element="authorization-link" destination="header-links" />
+        <move element="header" destination="header.panel" />
+        <move element="my-account-link" destination="header.links" />
+        <move element="authorization-link" destination="header.links" />
+        <move element="authorization-link-login" destination="header.links" />
 
 
 
