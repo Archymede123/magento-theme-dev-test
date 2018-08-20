@@ -5,6 +5,6 @@
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::THEME,
-    'frontend/TimTheme/ThemePro',
+    'frontend/NablingTheme/Frozen',
     __DIR__
 );
