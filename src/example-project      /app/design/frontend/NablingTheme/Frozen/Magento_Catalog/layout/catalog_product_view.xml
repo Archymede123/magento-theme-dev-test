@@ -6,13 +6,8 @@
  */
 -->
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-  <body>
-    <move element="page.main.title" destination="product.info.media" before="-"/>
-    <move element="product.info.details" destination="product.info.main" after="-" />
-    <referenceBlock name="page.main.title" display="false"/>
 
-  </body>
-    <!-- <head>
+    <head>
         <css src="mage/gallery/gallery.css"/>
     </head>
     <update handle="catalog_product_opengraph" />
@@ -201,5 +196,6 @@
                     name="product_viewed_counter"
                     template="Magento_Catalog::product/view/counter.phtml"/>
         </referenceContainer>
-    </body> -->
+        <move element="product.info.details" destination="product.info.main" after="-" />
+    </body>
 </page>
