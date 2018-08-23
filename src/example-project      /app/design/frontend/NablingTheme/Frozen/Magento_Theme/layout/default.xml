@@ -42,7 +42,10 @@
         <move element="my-account-link" destination="header.links" />
         <move element="authorization-link" destination="header.links" />
         <move element="authorization-link-login" destination="header.links" />
-
+        <move element="category.view.container" destination="page.main.title" />
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceContainer name="wishlist_sidebar" remove="true" />
+        
 
 
 

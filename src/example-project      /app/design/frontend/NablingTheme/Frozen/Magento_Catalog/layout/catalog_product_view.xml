@@ -9,6 +9,8 @@
   <body>
     <move element="page.main.title" destination="product.info.media" before="-"/>
     <move element="product.info.details" destination="product.info.main" after="-" />
+    <referenceBlock name="page.main.title" display="false"/>
+
   </body>
     <!-- <head>
         <css src="mage/gallery/gallery.css"/>
