@@ -18,6 +18,8 @@
 ?>
 <?php if ($_additional = $block->getAdditionalData()): ?>
     <div class="additional-attributes-wrapper table-wrapper">
+        <?= $_product->getShortDescr() ?>
+        <?= $_product->getOrigin() ?>
         <table class="data table additional-attributes" id="product-attribute-specs-table">
             <caption class="table-caption"><?= /* @escapeNotVerified */ __('More Information') ?></caption>
             <tbody>

@@ -1,0 +1,195 @@
+// photo galery
+
+.product.media {
+    width: 33% !important;
+
+    .gallery-placeholder {
+        min-width: 100%;
+    }
+    
+    .fotorama__caption {
+        display: none;
+    }
+    
+    .fotorama__nav-wrap {
+        background-color: @grey-light;
+        padding: 4px;
+    }
+
+    .fotorama__thumb-border {
+        border: none;
+        background-image: none;
+    }
+
+    .fotorama__nav__frame {
+        padding: 0px !important;
+
+        &:not(:last-child) {
+            margin-right: 4px;
+        }
+
+        &.fotorama__active {
+            border: 1px solid @color-primary;
+        }
+    }
+}
+
+// product  info 
+
+.product-info-main {
+    width: 63% !important;
+
+    .page-title-wrapper {
+        display: none;
+    }
+
+    .product-add-form {
+        padding-top: 12%;
+    }
+
+    .box-tocart .actions {
+        display: flex;
+
+        button {
+            margin-bottom: 0px !important;
+        }
+    }
+}
+
+.product-info-custom {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 33% 33% 33%;
+    height: 37vh;
+
+    &--names {
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+
+        &__full-name {
+            font-weight: 400;
+            font-size: 2rem;
+        }
+
+        &__latin-name {
+            font-size: 1.2rem;
+        }
+
+        &__id {
+            display: block;
+        }
+    }
+
+    &--description {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+        font-size: 1.2rem;
+
+        &__content {
+            width: 70%;
+            display: block;
+        }
+    }
+
+    &--prices {
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        max-width: 70%;
+
+        &__item1,
+        &__item2,
+        &__item3 {
+            flex: 1 0 auto;
+            font-size: 1.4rem;
+            position: relative;
+
+            &::before {
+                color: @grey-light;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                display: block;
+            }
+        }
+
+        &__item1::before {
+            content: "MOQ";
+        }
+
+        &__item2::before {
+            content: "Unitary Price";
+        }
+
+        &__item3::before {
+            content: "Price / Kg FOB";
+        }
+
+        &__item1::after,
+        &__item2::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 100%;
+            background-color: @grey-light;
+            position: absolute;
+            top: 0px;
+        }
+
+        &__item1::after {
+            left: 60%;
+        }
+
+        &__item2::after {
+            left: 75%;
+        }
+    }
+
+    &--details {
+        grid-row: 1 / span 3;
+        grid-column: 2 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+
+        &__origin,
+        &__freezing,
+        &__packaging,
+        &__process,
+        &__supplier {
+            flex: 1 0 auto;
+            font-size: 1.4rem;
+            position: relative;
+
+            &::before {
+                color: @grey-light;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                display: block;
+            }
+        }
+
+        &__origin::before {
+            content: "origin";
+        }
+
+        &__freezing::before {
+            content: "freezing process";
+        }
+
+        &__packaging::before {
+            content: "packaging details";
+        }
+
+        &__process::before {
+            content: "industrial process";
+        }
+
+        &__supplier::before {
+            content: "supplier";
+        }
+
+    }
+}

@@ -196,6 +196,38 @@
                     name="product_viewed_counter"
                     template="Magento_Catalog::product/view/counter.phtml"/>
         </referenceContainer>
-        <move element="product.info.details" destination="product.info.main" after="-" />
+
+        <!-- Custom Additional XML instructions  -->
+
+        <!-- <move element="product.info.details" destination="product.info.main" after="-" /> -->
+        <referenceBlock name="product.info.review" remove="true"/>
+        <referenceBlock name="product.info.price" remove="true"/>
+        <referenceBlock name="product.info.social" remove="true"/>
+        <!-- <referenceBlock name="product.info.description" remove="true"/> -->
+        <referenceBlock name="product.attributes" remove="true"/>
+        
+            
+        <!-- <move element="product.attributes" destination="product.info.main" before="product.info.price" /> -->
+        
+        <!-- custom container -->
+
+        <container name="product.info.custom" as="productInfoCustom" label="Product Info Custom" htmlTag="div" htmlClass="product-info-custom">
+            <block class="Magento\Catalog\Block\Product\View" name="ProductMainInfo" template="Magento_Catalog::product/view/custom_info_main.phtml" />
+        </container>
+        <container name="product.info.custom.additionnal" as="prodctInfoCustomAdditional" label="Product Info Custom Additional" htmlTag="div" htmlClass="product-info-custom-additional">
+            <block class="Magento\Catalog\Block\Product\View" name="ProductSecondaryInfo" template="Magento_Catalog::product/view/custom_info_secondary.phtml" />
+        </container>
+        <container name="product.info.custom.media" as="prodctInfoCustomMedia" label="Product Info Custom Media" htmlTag="div" htmlClass="product-info-custom-media">
+            <block class="Magento\Catalog\Block\Product\View" name="ProductSecondaryMedia" template="Magento_Catalog::product/view/custom_info_media.phtml" />
+        </container>
+
+        <!-- custom container XML instructions -->
+
+        <move element="product.info.custom" destination="product.info.main" before="product.info.price" />
+        <move element="product.info.custom.additionnal" destination="content.aside"  />
+        <move element="product.info.custom.media" destination="content.aside"  />
+
+      
+
     </body>
 </page>
