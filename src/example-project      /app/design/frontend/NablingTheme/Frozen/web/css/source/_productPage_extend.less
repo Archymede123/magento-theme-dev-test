@@ -193,3 +193,109 @@
 
     }
 }
+
+// related products 
+
+.title--product-page {
+    text-align: center;
+
+    strong {
+        text-transform: uppercase;
+        font-size: 2rem !important;
+        font-weight: 200 !important;
+    }
+}
+
+.related .content--product-page {
+    .product-items {
+        margin-left: 0px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .product-item {
+            flex: 1 0 auto;
+
+            &-details {
+                height: 11em;
+            }
+
+            &-name {
+                margin-left: 0px;
+            }
+        }
+    }
+}
+
+
+
+// infos media 
+
+.tabs--column {
+    display: flex;
+
+    .nav-tabs--column {
+        height: 100% !important;
+        flex: 0 0 33%;
+        border-bottom: none !important;
+
+        .active {
+            border: none !important;
+        }
+
+        .nav-item--column {
+            height: 48px;
+            margin-bottom: 4px;
+            position: relative;
+
+            .nav-link {
+                border-top-right-radius: 0px;
+                border-right: none !important;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-color: inherit;
+                    height: 100%;
+                    width: 24px;
+                    top: 0;
+                    right: -24px;
+                    -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
+                    clip-path: polygon(100% 50%, 0 0, 0 100%);
+                }
+            }
+        }
+    }
+
+    .tab-content--column {
+        flex: 1 0 66%;
+        min-height: 250px;
+
+        .tab-pane {
+            min-height: 250px;
+        }
+
+        img {
+            width: 250px !important;
+            margin: 0 auto;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            opacity: 1;
+
+            &:hover {
+                background-color: @grey-light;
+            }
+        }
+
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23449ed4' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+        }
+
+        .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23449ed4' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+        }
+    }
+}
+
