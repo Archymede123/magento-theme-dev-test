@@ -18,34 +18,267 @@
     $_product = $block->getProduct();
 ?>
 
-<div class="tabs">
+<div class="tabs product-info-custom-additional--tabs">
     <ul id="myTab" class="nav nav-tabs">
         <li class="nav-item">
-            <a id="home-tab" class="nav-link active" href="#home" data-toggle="tab">
-                <span>
-                    supplier
-                </span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a id="profile-tab" class="nav-link" href="#profile" data-toggle="tab">
+            <a id="product-tab" class="nav-link active" href="#product" data-toggle="tab">
                 <span>
                     product
                 </span>
             </a>
         </li>
+        <li class="nav-item">
+            <a id="supplier-tab" class="nav-link" href="#supplier" data-toggle="tab">
+                <span>
+                    supplier
+                </span>
+            </a>
+        </li>
     </ul>
-    <div id="myTabContent" class="tab-content">
-        <div id="home" class="tab-pane fade show active">
-            <h3 class="tab-content--title">
-                Find out our latest supplier, a really nice guy
-            </h3>
-            <p class="tab-content--content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab minus distinctio cupiditate obcaecati, fugiat exercitationem
-                deleniti doloremque doloribus! Quidem nesciunt velit fuga, mollitia ipsam neque cumque repudiandae! Corporis,
-                harum illo.
-            </p>
+    <div id="myTabContent" class="tab-content product-info-custom-additional--content">
+        <div id="product" class="tab-pane fade show active product-info-custom-additional--pane">
+            <div class="tab-content--content product-info-custom-additional--informations">
+                <div class="product-info-custom-additional--column">
+                    <h4 class="product-info-custom-additional--column-title">
+                        Detailed informations
+                    </h4>
+                    <?php if (empty($_product->getFullDescr())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Description</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getFullDescr() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getOtherNames())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Others names</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getOtherNames() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getBrandName())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Brand</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getBrandName() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getTag())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Tags </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getTag() ?><?= $_product->getTag2() ?></span>
+                        </p>
+                    <?php endif; ?>   
+                </div>
+                <div class="product-info-custom-additional--column">
+                    <h4 class="product-info-custom-additional--column-title">
+                        Detailed pricing
+                    </h4>
+                    <?php if (empty($_product->getNegociatedPrice())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Negociated price </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getNegociatedPrice() ?></span>
+                        </p>
+                    <?php endif; ?>   
+                    <?php if (empty($_product->getOtherPrice())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Other price  </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getOtherPrice() ?></span>
+                        </p>
+                    <?php endif; ?>   
+                    <?php if (empty($_product->getPaymentMode())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Payment mode </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getPaymentMode() ?></span>
+                        </p>
+                    <?php endif; ?>   
+                    <?php if (empty($_product->getPaymentCondition())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Payment conditions </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getPaymentCondition() ?></span>
+                        </p>
+                    <?php endif; ?>   
+                    <?php if (empty($_product->getPaymentConditionOther())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Other payment conditions </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getPaymentConditionOther() ?></span>
+                        </p>
+                    <?php endif; ?>                                     
+                </div>
+                <div class="product-info-custom-additional--column">
+                    <h4 class="product-info-custom-additional--column-title">
+                        Detailed quantity
+                    </h4>
+                    <?php if (empty($_product->getPaymentConditionOther())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Volume details </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getVolumeDetails() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getPaymentConditionOther())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Incoterms</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getIncoterms() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getPaymentConditionOther())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Product lead time</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getProductLeadTime() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getPaymentConditionOther())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Partial shipment</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getPartialShipment() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getPaymentConditionOther())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Partial shipment zone</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getPartialShipmentZone() ?></span>
+                        </p>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
-        <div id="profile" class="tab-pane fade">...</div>
+        <div id="supplier" class="tab-pane fade">
+            <div class="tab-content--content product-info-custom-additional--informations">
+                <div class="product-info-custom-additional--column">
+                    <h4 class="product-info-custom-additional--column-title">
+                        Contact details
+                    </h4>
+                    <?php if (empty($_product->getSupplierName())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Name</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getSupplierName() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getSupplierType())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Type</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getSupplierType() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getIsVerified())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Is verified</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getIsVerified() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getSupplierAddress())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Address </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getSupplierAddress() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getContactName())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Main contact </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getContactName() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getContactPhone())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Phone number </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getContactPhone() ?></span>
+                        </p>
+                    <?php endif; ?>
+                </div>
+                <div class="product-info-custom-additional--column">
+                    <h4 class="product-info-custom-additional--column-title">
+                        Activity details
+                    </h4>
+                    <?php if (empty($_product->getSupplierTurnover())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Turnover </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getSupplierTurnover() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getNumberOfEmployee())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Number of employee  </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getNumberOfEmployee() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getNumberOfTradeEmployee())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Number of trade employee </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getNumberOfTradeEmployee() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getCommunicationLanguage())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Communication language </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getCommunicationLanguage() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getTradingCurrency())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Trading currency </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getTradingCurrency() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getEstablishementYear())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Establishement year </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getEstablishementYear() ?></span>
+                        </p>
+                    <?php endif; ?>
+                </div>
+                <div class="product-info-custom-additional--column">
+                    <h4 class="product-info-custom-additional--column-title">
+                        Business details
+                    </h4>
+                    <?php if (empty($_product->getExportStructure())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Export structure </span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getExportStructure() ?></span>
+                        </p>
+                    <?php endif; ?>
+
+                    
+                    <?php if (empty($_product->getAllowGroupage())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Allow groupage</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getAllowGroupage() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (empty($_product->getSubscriptionType())): ?>
+                    <?php else: ?>
+                        <p>
+                            <span class="product-info-custom-additional--field-title">Subscription type</span>
+                            <span class="product-info-custom-additional--field-content"><?= $_product->getSubscriptionType() ?></span>
+                        </p>
+                    <?php endif; ?>
+                    
+                </div>
+            </div>
+        </div>
     </div>
 </div>
