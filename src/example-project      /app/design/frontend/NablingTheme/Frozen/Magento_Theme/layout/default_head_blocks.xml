@@ -3,6 +3,7 @@
     <!-- local ressources -->
     <css src="style.css"/>
     <css src="css/bootstrap.css" />
+    <css src="css/source/variables/_typography_extend.css" /> 
     <!-- <script src="js/myjs.js"/> -->
 
     <!-- external ressources -->

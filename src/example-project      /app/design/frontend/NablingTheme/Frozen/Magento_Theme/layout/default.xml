@@ -46,9 +46,5 @@
         <referenceBlock name="catalog.compare.sidebar" remove="true"/>
         <referenceContainer name="wishlist_sidebar" remove="true" />
         
-
-
-
-
     </body>
 </page>
