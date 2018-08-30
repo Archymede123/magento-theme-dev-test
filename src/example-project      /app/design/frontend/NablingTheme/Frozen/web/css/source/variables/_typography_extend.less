@@ -45,7 +45,9 @@
 @font-family__sans-serif: 'Dubai', Helvetica, Arial, sans-serif;
 @font-family__base: @font-family__sans-serif;
 
+@root__font-size: 62.5%;
 @font-size-ratio__base: 1.6; // Defines ratio of the root font-size to the base font-size
+@font-size-unit-ratio: unit(@root__font-size * 16/100);
 @font-size__base: unit(@font-size-unit-ratio * @font-size-ratio__base, px); // Base font size value in <b>px</b> // 16px
 @font-size__xl: ceil(1.5 * @font-size__base); // 24px
 @font-size__l: ceil(1.25 * @font-size__base); // 20px

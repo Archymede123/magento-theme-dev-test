@@ -9,13 +9,6 @@
 
     
     <body>
-        <referenceContainer name="header.panel">
-            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
-                <arguments>
-                    <argument name="css_class" xsi:type="string">header links</argument>
-                </arguments>
-            </block>
-        </referenceContainer>
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_img_width" xsi:type="number">148</argument>
@@ -30,21 +23,37 @@
           <block class="Magento\Framework\View\Element\Template" name="myview" template="Magento_Theme::myview.phtml"/>
             <container name="sidebar.additional" as="sidebar_additional" label="Sidebar Additional"/>
         </container> -->
-
+        
         <referenceBlock name="skip_to_content" remove="true"/>
         <referenceBlock name="report.bugs" remove="true"/>
-        <referenceBlock name="navigation.sections" remove="true"/> 
+        <!-- <referenceBlock name="navigation.sections" remove="true"/>  -->
         <move element="copyright" destination="before.body.end"/>
-        <move element="catalog.topnav" destination="header-wrapper" after="logo" />
-        <move element="minicart" destination="header.panel" />
-        <move element="header.panel" destination="header-wrapper" after="catalog.topnav" />
-        <move element="header" destination="header.panel" />
-        <move element="my-account-link" destination="header.links" />
-        <move element="authorization-link" destination="header.links" />
-        <move element="authorization-link-login" destination="header.links" />
+        <!-- <move element="catalog.topnav" destination="header-wrapper" after="logo" /> -->
+        <!-- <move element="minicart" destination="header.panel" /> -->
+        <!-- <move element="header.panel" destination="header-wrapper" after="catalog.topnav" /> -->
+        <!-- <move element="header" destination="header.panel" /> -->
+        <!-- <move element="my-account-link" destination="header.links" /> -->
+        <!-- <move element="authorization-link" destination="header.links" /> -->
+        <!-- <move element="authorization-link-login" destination="header.links" /> -->
         <move element="category.view.container" destination="page.main.title" />
         <referenceBlock name="catalog.compare.sidebar" remove="true"/>
         <referenceContainer name="wishlist_sidebar" remove="true" />
+
+        <!-- my container -->
+        <container name="top-header" as="topHeader" label="Top Header" htmlTag="div" htmlClass="top-header" >
+             <block class="Magento\Framework\View\Element\Template" name="top-header2" template="Magento_Theme::myview.phtml" />
+        </container>
+        <move element="top-header" destination="page.wrapper" before="-" />
+        <move element="header.container" destination="top-header" before="-" />
+        <move element="navigation.sections" destination="top-header" />
+        <move element="top.search" destination="top-header" />
+        <move element="minicart" destination="top-header" />
+        
+
+        
+        
+
+
         
     </body>
 </page>

@@ -1,0 +1,16 @@
+{
+    "name": "weltpixel/m2-weltpixel-navigation-links-extension",
+    "description": "WeltPixel MegaMenu Module",
+    "version": "1.7.3",
+    "type": "metapackage",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "php": "~5.6.5|7.0.2|7.0.4|~7.0.6|~7.1.0",
+        "weltpixel/m2-weltpixel-backend": "~1.0 | master",
+        "weltpixel/m2-weltpixel-navigation-links": "~1.0 | master",
+        "magento/module-catalog": "102.* | 101.* | 100.*"
+    }   
+}
