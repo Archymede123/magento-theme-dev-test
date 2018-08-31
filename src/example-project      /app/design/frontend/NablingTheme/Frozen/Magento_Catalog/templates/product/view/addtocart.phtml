@@ -13,7 +13,7 @@
 <?php if ($_product->isSaleable()): ?>
 <div class="box-tocart">
     <div class="fieldset">
-        <!-- <?php if ($block->shouldRenderQuantity()): ?>
+        <?php if ($block->shouldRenderQuantity()): ?>
         <div class="field qty">
             <label class="label" for="qty"><span><?= /* @escapeNotVerified */ __('Qty') ?></span></label>
             <div class="control">
@@ -27,7 +27,7 @@
                        />
             </div>
         </div>
-        <?php endif; ?> -->
+        <?php endif; ?>
         <div class="actions">
             <button type="submit"
                     title="<?= /* @escapeNotVerified */ $buttonTitle ?>"
@@ -35,14 +35,6 @@
                     id="product-addtocart-button">
                 <span><?= /* @escapeNotVerified */ $buttonTitle ?></span>
             </button>
-            <button class= "action primary tocart">
-                <span>get a quote</span>
-            </button>
-            <button class= "action primary tocart">
-                <span>get details</span>
-            </button>
-
-
             <?= $block->getChildHtml('', true) ?>
         </div>
     </div>
