@@ -44,7 +44,7 @@ switch ($type = $block->getType()) {
             $shuffle = 0;
             $canItemsAddToCart = $block->canItemsAddToCart();
 
-            $showAddTo = true;
+            $showAddTo = false;
             $showCart = false;
             $templateType = null;
             $description = false;
@@ -162,16 +162,10 @@ switch ($type = $block->getType()) {
     <?php else: ?>
         <div class="block <?= /* @escapeNotVerified */ $class ?>">
     <?php endif; ?>
-    <div class="block-title title">
+    <div class="block-title title title--product-page">
         <strong id="block-<?= /* @escapeNotVerified */ $class ?>-heading" role="heading" aria-level="2"><?= /* @escapeNotVerified */ $title ?></strong>
     </div>
-    <div class="block-content content" aria-labelledby="block-<?= /* @escapeNotVerified */ $class ?>-heading">
-        <?php if ($type == 'related' && $canItemsAddToCart): ?>
-        <div class="block-actions">
-            <?= /* @escapeNotVerified */ __('Check items to add to the cart or') ?>
-            <button type="button" class="action select" role="select-all"><span><?= /* @escapeNotVerified */ __('select all') ?></span></button>
-        </div>
-        <?php endif; ?>
+    <div class="block-content content content--product-page" aria-labelledby="block-<?= /* @escapeNotVerified */ $class ?>-heading">
         <div class="products wrapper grid products-grid products-<?= /* @escapeNotVerified */ $type ?>">
             <ol class="products list items product-items">
                 <?php $iterator = 1; ?>
@@ -201,15 +195,6 @@ switch ($type = $block->getType()) {
 
                             <?php if ($templateType): ?>
                                 <?= $block->getReviewsSummaryHtml($_item, $templateType) ?>
-                            <?php endif; ?>
-
-                            <?php if ($canItemsAddToCart && !$_item->isComposite() && $_item->isSaleable() && $type == 'related'): ?>
-                                <?php if (!$_item->getRequiredOptions()): ?>
-                                    <div class="field choice related">
-                                        <input type="checkbox" class="checkbox related" id="related-checkbox<?= /* @escapeNotVerified */ $_item->getId() ?>" name="related_products[]" value="<?= /* @escapeNotVerified */ $_item->getId() ?>" />
-                                        <label class="label" for="related-checkbox<?= /* @escapeNotVerified */ $_item->getId() ?>"><span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span></label>
-                                    </div>
-                                <?php endif; ?>
                             <?php endif; ?>
 
                             <?php if ($showAddTo || $showCart): ?>
@@ -251,6 +236,10 @@ switch ($type = $block->getType()) {
                                 </div>
                             <?php endif; ?>
                         </div>
+
+                        <button class="action primary tocart">
+                            view product
+                        </button>
                     </div>
                     <?= ($iterator == count($items)+1) ? '</li>' : '' ?>
                 <?php endforeach ?>
