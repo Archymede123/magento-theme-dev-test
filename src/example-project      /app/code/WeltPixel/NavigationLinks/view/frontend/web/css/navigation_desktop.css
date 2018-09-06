@@ -29,10 +29,10 @@
     text-transform: uppercase;
 }
 .navigation .megamenu a.bold-menu,
-.navigation .megamenu a:hover {
+/* .navigation .megamenu a:hover {
     color: #444444 !important;
     text-shadow: 0 0 0 #000000;
-}
+} */ 
 .navigation .megamenu a.level-top {
     padding: 0 10px;
 }

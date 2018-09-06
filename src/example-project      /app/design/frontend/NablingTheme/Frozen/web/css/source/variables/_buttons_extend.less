@@ -4,7 +4,7 @@
 @button__font-weight: @font-weight__regular;
 @button__line-height: @font-size__base + 2;
 @button__margin: 0;
-@button__padding: 7px 15px; // is set up to false when buttons don't depend on side paddings or have fixed width
+@button__padding: 8px 16px; // is set up to false when buttons don't depend on side paddings or have fixed width
 @button__width: false; // is set up to false when buttons depend on side paddings or to fixed value when needed
 
 
@@ -71,14 +71,9 @@
   font-weight: 200;
   position: relative;
 
-  &:hover::after {
-    content: "";
-    position: absolute;
-    top: 4%;
-    left: 1%;
-    width: 98%;
-    height: 90%;
-    border: 1px solid @color-secondary;
+  &:hover {
+    outline: 1px solid @color-secondary;
+    outline-offset: -4px;
   }
 
   &.cta {
@@ -86,8 +81,8 @@
     border: none;
     color: white;
 
-    &:hover::after {
-      border: 1px solid white;
+    &:hover {
+      outline: 1px solid white;
     }
   }
 }

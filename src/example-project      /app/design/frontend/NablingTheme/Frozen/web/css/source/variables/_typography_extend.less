@@ -51,15 +51,27 @@
 @font-size__base: unit(@font-size-unit-ratio * @font-size-ratio__base, px); // Base font size value in <b>px</b> // 16px
 @font-size__xl: ceil(1.5 * @font-size__base); // 24px
 @font-size__l: ceil(1.25 * @font-size__base); // 20px
-@font-size__s: ceil(.88 * @font-size__base); // 12px
+@font-size__s: ceil(.88 * @font-size__base); // 15px
 @font-size__xs: floor(.75 * @font-size__base); // 12px
 
 // @text__color: @primary__color;
 // @text__color__intense: @primary__color__darker;
 // @text__color__muted: @primary__color__lighter;
 
+// headings 
+
 .content-heading,
 .block-title {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 2rem;
+
+    .title,
+    strong {
+        font-size: 2.5rem !important;
+        font-weight: 200 !important;
+    }
+
     &::before {
         content: '';
         display: block;
@@ -75,3 +87,4 @@
         z-index: -1;
     }
 }
+
