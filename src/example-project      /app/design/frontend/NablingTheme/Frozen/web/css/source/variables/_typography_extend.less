@@ -57,3 +57,21 @@
 // @text__color: @primary__color;
 // @text__color__intense: @primary__color__darker;
 // @text__color__muted: @primary__color__lighter;
+
+.content-heading,
+.block-title {
+    &::before {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: -moz-radial-gradient(center, ellipse cover, #fff 25%, #cecece 100%);
+        background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(25%, #fff), color-stop(100%, #cecece));
+        background: -webkit-radial-gradient(center, ellipse cover, #fff 25%, #cecece 100%);
+        background: -ms-radial-gradient(center, ellipse cover, #fff 25%, #cecece 100%);
+        background: radial-gradient(ellipse at center, #fff 25%, #cecece 100%);
+        position: absolute;
+        top: 50%;
+        z-index: -1;
+    }
+}

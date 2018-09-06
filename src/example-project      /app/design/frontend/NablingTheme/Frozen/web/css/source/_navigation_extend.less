@@ -61,6 +61,15 @@
         grid-column: 2 ~"/" span 1;
         background-color: unset;
         border-bottom: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+
+        .panel.header {
+          padding: 0 32px 0 0;
+          margin: 0px;
+        }
 
         .greet.welcome {
           margin-right: 64px;
@@ -81,6 +90,7 @@
         grid-row: 1 ~"/" span 2;
         grid-column: 1 ~"/" span 1;
         border: 1px solid @grey-light;
+        border-bottom: none;
         width: 100%;
 
         .logo {
@@ -163,9 +173,6 @@
         text-align: center;
         height: 100%;
 
-        &:last-child {
-          border-right: 1px solid @grey-light !important;
-        }
 
         &:first-child {
           border-left: none !important;
@@ -241,6 +248,7 @@
         width: 100%;
         position: relative;
         display: block;
+        border-left: 1px solid @grey-light;
 
         .search-icon__search {
           position: absolute;
@@ -303,6 +311,7 @@
             border-right: 1px solid @grey-light;
             padding-left: 24px;
             font-weight: 100;
+            letter-spacing: 1px;
           }
         }
       }
@@ -323,23 +332,55 @@
         letter-spacing: 2.3px;
         line-height: 2.5;
         text-transform: uppercase;
-        display: initial !important;
+        display: flex !important;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 100%;
+        justify-content: center;
+        align-items: center;
 
         .text {
           position: relative !important;
           padding-left: 8px !important;
           color: white !important;
+          height: unset !important;
+          width: unset !important;
+          margin: 0px 8px !important;
+        }
+
+        .counter.qty {
+          background: #fff !important;
+          color: @color-primary !important;
+          line-height: unset !important;
+          margin: 0px !important;
+          padding: 0px !important;
+          min-width: 24px !important;
         }
       }
 
       .action.showcart:before {
         color: white;
       }
+
+      .counter-number {
+        text-shadow: none !important;
+      }
     }
   }
 }
 
+// breadcrumb 
+
+.breadcrumbs {
+  margin-top: 8px;
+
+  .item > a {
+    color: @grey-medium;
+  }
+
+  .product strong {
+    color: @color-secondary;
+  }
+}
