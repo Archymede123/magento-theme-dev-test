@@ -15,6 +15,7 @@
 <?php
     $_helper = $this->helper('Magento\Catalog\Helper\Output');
     $_product = $block->getProduct();
+    $_pricingHelper = $this->helper(\Magento\Framework\Pricing\Helper\Data::class);
 ?>
 <div class="product-info-custom--names">
     <span class="product-info-custom--names__full-name">
@@ -36,13 +37,13 @@
 
 <div class="product-info-custom--prices">
     <div class="product-info-custom--prices__item1">
-        <?= $_product->getMoq() ?> <?= $block->getChildHtml('meta.currency') ?>
+        <?= $_pricingHelper->currency($_product->getUnitPrice(), true, false); ?>
     </div>
     <div class="product-info-custom--prices__item2">
-        <?= $_product->getUnitPrice() ?>
+        <?= $_product->getIncoterms() ?>
     </div>
     <div class="product-info-custom--prices__item3">
-        <?= $_product->getPerkgPrice() ?>
+        <?= $_pricingHelper->currency($_product->getPerkgPrice(), true, false); ?>
     </div>
 </div>
 

@@ -16,6 +16,7 @@
 <?php
     $_helper = $this->helper('Magento\Catalog\Helper\Output');
     $_product = $block->getProduct();
+    $_pricingHelper = $this->helper(\Magento\Framework\Pricing\Helper\Data::class);
 ?>
 
 <div class="tabs product-info-custom-additional--tabs">
@@ -90,14 +91,14 @@
                             <?php else: ?>
                                 <p>
                                     <span class="product-info-custom-additional--field-title">Negociated price </span>
-                                    <span class="product-info-custom-additional--field-content"><?= $_product->getNegociatedPrice() ?></span>
+                                    <span class="product-info-custom-additional--field-content"><?= $_pricingHelper->currency($_product->getNegociatedPrice(), true, false); ?></span>
                                 </p>
                             <?php endif; ?>   
                             <?php if (empty($_product->getOtherPrice())): ?>
                             <?php else: ?>
                                 <p>
                                     <span class="product-info-custom-additional--field-title">Other price  </span>
-                                    <span class="product-info-custom-additional--field-content"><?= $_product->getOtherPrice() ?></span>
+                                    <span class="product-info-custom-additional--field-content"><?= $_pricingHelper->currency($_product->getOtherPrice(), true, false); ?></span>
                                 </p>
                             <?php endif; ?>   
                             <?php if (empty($_product->getPaymentMode())): ?>
@@ -142,8 +143,8 @@
                             <?php if (empty($_product->getIncoterms())): ?>
                             <?php else: ?>
                                 <p>
-                                    <span class="product-info-custom-additional--field-title">Incoterms</span>
-                                    <span class="product-info-custom-additional--field-content"><?= $_product->getIncoterms() ?></span>
+                                    <span class="product-info-custom-additional--field-title">MOQ</span>
+                                    <span class="product-info-custom-additional--field-content"><?= $_product->getMoq() ?></span>
                                 </p>
                             <?php endif; ?>
                             <?php if (empty($_product->getProductLeadTime())): ?>

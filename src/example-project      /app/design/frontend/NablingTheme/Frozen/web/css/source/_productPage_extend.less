@@ -45,15 +45,17 @@
         display: none;
     }
 
-    .product-add-form {
-        padding-top: 8rem;
-    }
-
     .box-tocart .actions {
         display: flex;
 
         button {
             margin-bottom: 0px !important;
+            flex: 1 0 auto;
+            width: auto;
+        }
+
+        button:not(:last-child) {
+            margin-right: 8px;
         }
     }
 }
@@ -123,15 +125,15 @@
         }
 
         &__item1::before {
-            content: "MOQ";
-        }
-
-        &__item2::before {
             content: "Unitary Price";
         }
 
+        &__item2::before {
+            content: "Incoterms";
+        }
+
         &__item3::before {
-            content: "Price / Kg FOB";
+            content: "Price / Kg";
         }
 
         &__item1::after,
@@ -316,9 +318,9 @@
                     position: absolute;
                     background-color: inherit;
                     height: 100%;
-                    width: 24px;
+                    width: 26px;
                     top: 0;
-                    right: -24px;
+                    right: -25px;
                     -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
                     clip-path: polygon(100% 50%, 0 0, 0 100%);
                 }
@@ -356,14 +358,6 @@
                 background-color: @grey-light;
             }
         }
-
-        .carousel-control-prev-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23449ed4' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
-        }
-
-        .carousel-control-next-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23449ed4' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
-        }
     }
 }
 
@@ -384,6 +378,14 @@
             display: block !important;
         }
     }
+
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23449ed4' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+    }
+
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23449ed4' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+    }
 }
 
 // mobile only
@@ -402,7 +404,7 @@
             .fotorama__arr__arr {
                 height: 48px;
                 width: 48px;
-                background: rgba(128, 128, 128, 0.2);;
+                background: rgba(128, 128, 128, 0.2);
                 position: relative;
 
                 &::after, 
@@ -489,6 +491,10 @@
             }
         }
     }
+
+    .products-grid .product-items button {
+        width: 100%;
+    }
     
     .product-info-custom-additional {
 
@@ -527,6 +533,12 @@
             margin-bottom: 0px;
             margin-top: 1rem;
         }
+
+        &--tabs {
+            .nav .nav-item {
+                height: 56px;
+            }
+        }
     }
 
     .product-info-custom-media {
@@ -539,10 +551,28 @@
             flex-direction: row !important;
         }
 
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+        }
+
+        .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+        }
+        
+
         .tabs {
 
             &--column {
                 display: unset;
+            }
+
+            .nav-link {
+                height: 56px;
+
+                span::before,
+                span::after {
+                    width: 130% !important;
+                }
             }
 
             .nav-link::after {

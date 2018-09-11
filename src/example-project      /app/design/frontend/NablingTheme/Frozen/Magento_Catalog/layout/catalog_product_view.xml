@@ -211,7 +211,7 @@
             
         <!-- <move element="product.attributes" destination="product.info.main" before="product.info.price" /> -->
         
-        <!-- custom container -->
+        <!-- custom containers -->
 
         <container name="product.info.custom" as="productInfoCustom" label="Product Info Custom" htmlTag="div" htmlClass="product-info-custom">
             <block class="Magento\Catalog\Block\Product\View" name="ProductMainInfo" template="Magento_Catalog::product/view/custom_info_main.phtml" />
