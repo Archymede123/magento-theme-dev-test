@@ -56,7 +56,10 @@
 
                                 <?php if ($showWishlist || $showCompare || $showCart): ?>
                                     <div class="product-item-actions">
-                                        <?php if ($showCart): ?>
+                                        <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="action primary">
+                                            <span>view product</span>
+                                        </a>
+                                        <!-- <?php if ($showCart): ?>
                                             <div class="actions-primary">
                                                 <?php if ($_item->isSaleable()): ?>
                                                     <?php if ($_item->getTypeInstance()->hasRequiredOptions($_item)): ?>
@@ -81,7 +84,7 @@
                                                 <?php endif; ?>
                                             </div>
                     
-                                        <?php endif; ?>
+                                        <?php endif; ?> -->
                                         <?php if ($showWishlist || $showCompare): ?>
                                             <div class="actions-secondary" data-role="add-to-links">
                                                 <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && $showWishlist): ?>

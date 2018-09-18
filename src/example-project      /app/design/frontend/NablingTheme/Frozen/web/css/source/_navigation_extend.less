@@ -407,6 +407,15 @@
           height: unset !important;
           width: unset !important;
           margin: 0px 8px !important;
+
+          &::after {
+            display: block;
+            content: "my order";
+            font-weight: 400;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+          }
         }
 
         .counter.qty {
@@ -425,6 +434,10 @@
 
       .counter-number {
         text-shadow: none !important;
+      }
+
+      &:hover .text {
+        font-weight: 400;
       }
     }
   }
