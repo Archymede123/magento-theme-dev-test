@@ -1,0 +1,92 @@
+.minicart-wrapper .block-minicart {
+    box-shadow: 
+        0 3px 3px 0 rgba(0,0,0,0.14), 
+        0 3px 4px 0 rgba(0,0,0,0.12), 
+        0 1px 8px 0 rgba(0,0,0,0.20);
+    border: none;
+    right: 0px;
+    width: max-content;
+    padding: 24px 8px;
+
+    button:focus {
+        box-shadow: none !important;
+    }
+
+    .block-content > .actions {
+        margin-top: 0px;
+
+        .action.primary.cta {
+            border-radius: 0px;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .primary .action.primary.checkout {
+            font-size: 16px;
+            padding: 8px 16px;
+            text-transform: none;
+            border: none;
+            color: @grey-dark;
+
+            &:hover {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .minicart-items-wrapper {
+        border: none;
+        margin: 0 -20px 0 -8px;
+        height: unset !important;
+        
+        .minicart-items {
+            max-height: 65vh;
+            overflow: scroll;
+
+            &::-webkit-scrollbar {
+                width: 1em;
+            }
+            
+            &::-webkit-scrollbar-track {
+                background: white;
+                border: 1px solid @grey-light;
+
+                &:horizontal {
+                    display: none;
+                }
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                background-color: @grey-dark;
+                outline: 1px solid slategrey;
+            }
+
+            .product-item {
+                &-details {
+                    padding-left: 16px;
+                    margin-right: 16px;
+                    position: relative;
+
+                    .product.actions {
+                        position: absolute;
+                        bottom: 0px;
+                        right: 0px;
+                    }
+                }
+                
+                &-name {
+                    a {
+                        color: @grey-dark;
+                        font-size: @font-size__s;
+
+                        &:hover {
+                            font-weight: 300;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
