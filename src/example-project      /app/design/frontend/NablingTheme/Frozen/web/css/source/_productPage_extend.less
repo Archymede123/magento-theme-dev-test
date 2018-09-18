@@ -47,16 +47,76 @@
 
     .box-tocart .actions {
         display: flex;
+        position: relative;
 
-        button {
-            margin-bottom: 0px !important;
-            flex: 1 0 auto;
+        .action.primary {
+            height: 54px;
+            flex: 1 0 20%;
             width: auto;
+            z-index: 5;
+
+            &:first-child {
+                flex: 1 0 35%;
+            }
         }
 
-        button:not(:last-child) {
+        .action.primary:not(:last-child) {
             margin-right: 8px;
         }
+
+        .quote {
+            position: relative;
+
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.quote-toggle-checkbox {
+    display: none;
+}
+
+.get-quote {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    width: 71%;
+    height: 0;
+    // transition: opacity ease-in-out 1s;
+    // -webkit-transition: opacity ease-in-out 1s;
+    z-index: 4;
+
+    .form.contact {
+        width: unset !important;
+        float: unset !important;
+    }
+
+    .action.primary {
+        width: 128px !important;
+    }
+}
+
+.quote-toggle-checkbox:checked {
+    &~ .get-quote {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        top: 15%;
+        transition: top ease-in-out 1s, opacity ease-in-out 1s;
+        -webkit-transition: top ease-in-out 1s, opacity ease-in-out 1s;
+    }
+
+    &~ .quote {
+        margin-bottom: 80% !important;
+        transition: margin-bottom ease-in-out .5s;
     }
 }
 
@@ -203,6 +263,10 @@
 
     }
 }
+
+
+
+
 
 // related products 
 

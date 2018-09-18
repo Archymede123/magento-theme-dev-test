@@ -222,12 +222,16 @@
         <container name="product.info.custom.media" as="prodctInfoCustomMedia" label="Product Info Custom Media" htmlTag="div" htmlClass="product-info-custom-media">
             <block class="Magento\Catalog\Block\Product\View" name="ProductSecondaryMedia" template="Magento_Catalog::product/view/custom_info_media.phtml" />
         </container>
+        <!-- <container name="product.contact.form" as="prodctContactForm" label="Product Contact Form" htmlTag="div" htmlClass="product-contact-form">
+            <block class="Magento\Catalog\Block\Product\View" name="ProductContactForm" template="Magento_Catalog::product/view/product_contact_form.phtml" />
+        </container> -->
 
         <!-- custom container XML instructions -->
 
         <move element="product.info.custom" destination="product.info.main" before="product.info.price" />
         <move element="product.info.custom.additionnal" destination="content.aside"  />
         <move element="product.info.custom.media" destination="content.aside"  />
+        <!-- <move element="product.contact.form" destination="content" after="product.info.details"  /> -->
 
       
 
