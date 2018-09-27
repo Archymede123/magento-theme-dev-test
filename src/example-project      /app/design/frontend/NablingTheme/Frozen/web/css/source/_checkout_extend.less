@@ -1,0 +1,177 @@
+.opc-progress-bar-item._active::before {
+    background: blue;
+}
+
+.opc-progress-bar-item {
+    width: 50%;
+
+    > span::after {
+        color: @color-secondary;
+    }
+
+    &::before {
+        background: @grey-light;
+        border-color: @grey-light;
+    }
+
+    &._active {
+        &::before,
+        & > span::before {
+            background: @color-secondary;
+            border-color: @color-secondary;
+        }
+
+        & > span::after {
+            border-color: @color-secondary;
+        }
+
+        & > span {
+            color: @grey-dark;
+            font-weight: 200;
+        }
+    }   
+}
+
+.checkout-shipping-address .step-title,
+.payment-group .step-title {
+    color: @grey-dark;
+}
+
+.opc-wrapper .shipping-address-item.selected-item {
+    border-color: @color-secondary;
+
+    &::after {
+        background: @color-secondary;
+    }
+}
+
+.form.form-purchase-order {
+    margin-bottom: 16px;
+}
+
+.opc-block-summary {
+    .table-totals .mark {
+        background-color: unset;
+    }
+}
+
+.payment-option._collapsible.opc-payment-additional.discount-code {
+    display: none;
+}
+
+.action-show-popup {
+    &:extend(.action.primary);
+}
+
+.action-show-popup:hover {
+    &:extend(.action.primary:hover);
+}
+
+.table-checkout-shipping-method .row {
+    font-size: 1.4rem
+}
+
+.checkout-payment-method .actions-toolbar .primary {
+    float: unset;
+}
+
+
+.payment-group {
+    .label {
+        width: 100%;
+        font-weight: normal;
+    }
+
+    input[type="radio"]:empty,
+    input[type="checkbox"]:empty {
+        display: none;
+    }
+
+    input[type="radio"]:empty ~ .label,
+    input[type="checkbox"]:empty ~ label {
+        position: relative;
+        line-height: 2.5em;
+        text-indent: 3.25em;
+        cursor: pointer;
+        -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+    }
+
+    input[type="radio"]:empty ~ .label:before {
+        content: " ";
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 12px;
+        transform: translate(-50%, -50%);
+        height: 16px;
+        width: 16px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 0 0pt 1pt @color-primary;
+    }
+
+    input[type="radio"]:hover:not(:checked) ~ .label {
+        color: #888;
+    }
+
+    input[type="radio"]:checked ~ .label:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translate(-50%, -50%);
+        height: 12px;
+        width: 12px;
+        background-color: @color-primary;
+        border-radius: 50%;
+    }
+
+    input[type="checkbox"]:empty ~ label:before {
+        content: " ";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 12px;
+        transform: translate(-50%, -50%);
+        height: 16px;
+        width: 16px;
+        background-color: white;
+        
+        box-shadow: 0 0 0pt 1pt @color-primary;
+    }
+
+    input[type="checkbox"]:hover:not(:checked) ~ label {
+        color: #888;
+    }
+
+    input[type="checkbox"]:checked ~ label:before {
+        content: "\2714";
+        text-indent: .5em;
+        color: @color-primary;
+    }
+
+
+
+    .fieldset .actions-toolbar .primary {
+        .action-update {
+            &:extend(.action.primary);
+            font-size: 1rem;
+            padding: 4px 8px;
+            height: 24px;
+
+            &:hover {
+                &:extend(.action.primary:hover);
+                outline: none;
+                font-weight: 300;
+            }
+        }
+        
+        .action-cancel {
+            color: @color-secondary;
+            text-transform: uppercase;
+        }
+    }
+}

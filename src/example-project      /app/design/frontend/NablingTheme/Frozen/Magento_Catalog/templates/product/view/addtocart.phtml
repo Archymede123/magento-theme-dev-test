@@ -32,6 +32,8 @@
             <button type="submit"
                     title="<?= /* @escapeNotVerified */ $buttonTitle ?>"
                     class="cta action primary tocart"
+                    formaction="add-to-cart"
+                    onclick="document.getElementByClass("get-quote").style.display = "none";"
                     id="product-addtocart-button">
                 <span><?= /* @escapeNotVerified */ $buttonTitle ?></span>
             </button>
@@ -40,6 +42,7 @@
                 <span>get a quote</span>
             </label>
             <div class="get-quote">
+                <form action="#"></form>
                 <form action="#"></form>
                 <form class="form contact" 
                     action="<?php echo $this->getUrl('contact/index/post'); ?>"
@@ -52,13 +55,13 @@
                         <div class="field name required">
                             <label class="label" for="name"><span><?= $block->escapeHtml(__('Name')) ?></span></label>
                             <div class="control">
-                                <input name="name" id="name" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('name') ?: $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+                                <input name="name" id="name" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('name') ?: $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" />
                             </div>
                         </div>
                         <div class="field email required">
                             <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
                             <div class="control">
-                                <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('email') ?: $this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+                                <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('email') ?: $this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" />
                             </div>
                         </div>
                         <div class="field telephone">
@@ -76,7 +79,7 @@
                         <div class="field comment required">
                             <label class="label" for="comment"><span><?= $block->escapeHtml(__('What’s on your mind?')) ?></span></label>
                             <div class="control">
-                                <textarea name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"><?= $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('comment')) ?></textarea>
+                                <textarea name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>" class="input-text" cols="5" rows="3"><?= $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('comment')) ?></textarea>
                             </div>
                         </div>
                         <?= $block->getChildHtml('form.additional.info') ?>
@@ -84,7 +87,9 @@
                     <div class="actions-toolbar">
                         <div class="primary">
                             <input type="hidden" name="hideit" id="hideit" value="" />
-                            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                            <button type="submit" 
+                                    title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" 
+                                    class="action submit primary">
                                 <span><?= $block->escapeHtml(__('Submit')) ?></span>
                             </button>
                         </div>
@@ -107,4 +112,6 @@
             "Magento_Catalog/js/validate-product": {}
         }
     }
+
+    
 </script>

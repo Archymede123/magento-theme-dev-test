@@ -28,6 +28,7 @@
             <thead>
                 <tr>
                     <th class="col item" scope="col"><span><?= /* @escapeNotVerified */ __('Item') ?></span></th>
+                    <th class="col incoterms" scope="col"><span><?= /* @escapeNotVerified */ __('Incoterms') ?></span></th>
                     <th class="col price" scope="col"><span><?= /* @escapeNotVerified */ __('Price') ?></span></th>
                     <th class="col qty" scope="col"><span><?= /* @escapeNotVerified */ __('Qty') ?></span></th>
                     <th class="col subtotal" scope="col"><span><?= /* @escapeNotVerified */ __('Subtotal') ?></span></th>
@@ -54,7 +55,7 @@
                 data-cart-empty=""
                 value="empty_cart"
                 title="<?= $block->escapeHtml(__('Clear Shopping Cart')) ?>"
-                class="action clear" id="empty_cart_button">
+                class="action clear primary" id="empty_cart_button">
             <span><?= /* @escapeNotVerified */ __('Clear Shopping Cart') ?></span>
         </button>
         <button type="submit"
@@ -62,7 +63,7 @@
                 data-cart-item-update=""
                 value="update_qty"
                 title="<?= $block->escapeHtml(__('Update Shopping Cart')) ?>"
-                class="action update">
+                class="action update primary">
             <span><?= /* @escapeNotVerified */ __('Update Shopping Cart') ?></span>
         </button>
         <input type="hidden" value="" id="update_cart_action_container" data-cart-item-update=""/>
