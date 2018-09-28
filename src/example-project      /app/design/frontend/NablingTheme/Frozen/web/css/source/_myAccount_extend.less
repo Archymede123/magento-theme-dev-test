@@ -1,0 +1,67 @@
+.block-collapsible-nav-content .nav.items {
+    flex-direction: column;
+    font-size: @font-size__s;
+    font-weight: 100;
+} 
+
+
+
+.block.block-dashboard-info,
+.block-dashboard-addresses,
+.sidebar-additional,
+.block-dashboard-orders {
+    .block-title {
+        color: @grey-dark;
+        padding-bottom: 8px !important;
+
+        strong {
+            font-size: 2rem !important;
+        }
+
+        &::before {
+            content: none;
+        }
+    }
+
+    .box-information,
+    .box-billing-address,
+    .box-shipping-address,
+    .box-newsletter {
+        .box-title {
+            font-weight: 200;
+        }
+    }
+
+    .box-content {
+        font-size: 1.4rem;
+        font-weight: 100;
+    }
+
+    .box-actions a,
+    .block-title .action.edit,
+    .block-title .action.view {
+        color: @color-secondary;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+    }
+
+    .product-item-name {
+        font-size: @font-size__s;
+        font-weight: 100;
+    }
+
+    .orders-recent .table-order-items {
+        th {
+            border-bottom: none;
+            border-top: none;
+            font-size: @font-size__s;
+        }
+
+        .col {
+            width: 30% !important;
+            font-size: 12px;
+        }
+    }
+}
+
+

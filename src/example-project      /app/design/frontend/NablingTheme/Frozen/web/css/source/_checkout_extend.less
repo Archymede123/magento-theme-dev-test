@@ -73,22 +73,55 @@
 
 .checkout-payment-method .actions-toolbar .primary {
     float: unset;
+    margin-top: 16px;
 }
 
 
 .payment-group {
     .label {
         width: 100%;
-        font-weight: normal;
+        font-weight: 200;
+        font-size: 1.8rem;
+    }
+
+    .checkout-billing-address {
+        .field.choice label {
+            font-size: 12px;
+            font-weight: 100;
+        }
+
+        .billing-address-details {
+            line-height: 20px;
+            font-size: @font-size__xs;
+            font-weight: 100;
+        }
+
+        .field-select-billing.select {
+            font-weight: 200;
+        }
+
+        .billing-address-form {
+            label,
+            .label {
+                font-weight: 200;
+                font-size: @font-size__s;
+            }
+
+            input,
+            .select {
+                font-weight: 100;
+                font-size: @font-size__xs;
+            }
+        }
     }
 
     input[type="radio"]:empty,
-    input[type="checkbox"]:empty {
+    input[type="checkbox"]:empty:not(#billing-save-in-address-book) {
         display: none;
     }
 
     input[type="radio"]:empty ~ .label,
-    input[type="checkbox"]:empty ~ label {
+    input[type="checkbox"]:empty:not(#billing-save-in-address-book) + label{
         position: relative;
         line-height: 2.5em;
         text-indent: 3.25em;
@@ -113,11 +146,12 @@
         box-shadow: 0 0 0pt 1pt @color-primary;
     }
 
-    input[type="radio"]:hover:not(:checked) ~ .label {
+    input[type="radio"]:hover:not(:checked) ~ .label,
+    input[type="checkbox"]:hover:not(:checked) + label {
         color: #888;
     }
 
-    input[type="radio"]:checked ~ .label:after {
+    input[type="radio"]:checked + .label:after {
         content: " ";
         position: absolute;
         top: 50%;
@@ -129,31 +163,25 @@
         border-radius: 50%;
     }
 
-    input[type="checkbox"]:empty ~ label:before {
+    input[type="checkbox"]:empty:not(#billing-save-in-address-book) + label:before {
         content: " ";
         position: absolute;
         display: block;
-        top: 0;
+        top: 12px;
         left: 12px;
         transform: translate(-50%, -50%);
         height: 16px;
         width: 16px;
         background-color: white;
-        
         box-shadow: 0 0 0pt 1pt @color-primary;
     }
 
-    input[type="checkbox"]:hover:not(:checked) ~ label {
-        color: #888;
-    }
-
-    input[type="checkbox"]:checked ~ label:before {
+    input[type="checkbox"]:checked:not(#billing-save-in-address-book) + label:before {
         content: "\2714";
-        text-indent: .5em;
+        text-indent: .4em;
         color: @color-primary;
+        line-height: 1.7em;
     }
-
-
 
     .fieldset .actions-toolbar .primary {
         .action-update {
@@ -174,4 +202,8 @@
             text-transform: uppercase;
         }
     }
+}
+
+.checkout-success {
+    font-size: 1.4rem;
 }
